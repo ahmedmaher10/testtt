@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "هني البرفكس"
+const prefix = "G"
 ///!                  Mal,SizGooo ツ
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith(prefix + "obc")) {
+    if (message.content.startsWith(prefix + "send")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -26,7 +26,7 @@ client.on("message", message => {
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "bc")) {
+              if (message.content.startsWith(prefix + "sent")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -82,9 +82,9 @@ client.on('ready',  () => {
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       ${prefix}obc | لأرسال برود كاست للكل
+       ${prefix}send | لأرسال برود كاست للكل
 
-       ${prefix}bc  |  لأرسال برود كاست للأونلاين
+       ${prefix}sent  |  لأرسال برود كاست للأونلاين
 
        ${prefix}inv | لدعوة البوت الي سيرفرك
 
