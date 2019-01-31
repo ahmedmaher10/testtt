@@ -397,7 +397,7 @@ client.on('guildMemberAdd', member=> {
     member.addRole(role);
 });
 client.on("message", message => {
-    if (message.content.startsWith(prefix + "obc")) {
+    if (message.content.startsWith(sent)) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -416,7 +416,7 @@ client.on("message", message => {
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "bc")) {
+              if (message.content.startsWith(send)) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
