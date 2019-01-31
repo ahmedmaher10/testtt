@@ -359,73 +359,33 @@ client.on('guildMemberAdd', member=> {
     var role = member.guild.roles.find("name","Rainbow");
     member.addRole(role);
 });
+console.log("Welcome Again !");
 
-          client.on('message' , message => {
-      if(message.author.bot) return;
-
-      if(message.content.startsWith("$")) {
-        if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-        let args = message.content.split(" ").slice(2);
-     var codes = args.join(' ')
-
-        if(!codes) {
-          message.channel.send("قم بكتابة الرسالة | !rolebc @everyone message")
-            return;
-        }
-
-
-              var role = message.mentions.roles.first();
-                if(!role) {
-                  message.reply("لا توجد رتبة بهذا الاسم")
-                    return;
-                }
-            message.guild.members.filter(m => m.roles.get(role.id)).forEach(n => {
-              n.send(
-              "**" + "السيرفر :" + "\n" +
-              `${message.guild.name}` + "\n" +
-              "المرسل :" + "\n" +
-              `${message.author.tag}` + "\n" +
-              "الرسالة :" + "\n" +
-              `${codes}` + "**"
-              )
-            })
-            message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عضو`)
-        }
-    });
-client.on('guildMemberAdd', member=> {
-    var role = member.guild.roles.find("name","!Givenchy Mamber");
-    member.addRole(role);
+client.on('ready', () => {
+    client.user.setStatus('idle');
 });
-client.on("message", message => {
-    if (message.content.startsWith(sent)) {
-                 if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
-  m.send(`${argresult}\n ${m}`);
-  })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  ط¹ط¯ط¯ ط§ظ„ظ…ط³طھظ„ظ…ظٹظ† `);
-  message.delete();
-  };
-  });
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`**
+      حياك الله ي بعد راسي
+       خش بتنورنا فعاليات وكل شيء حلو موجود !
+        ي بعد عيني الرابط تحت
+         Spring SERVER
 
-//bc online
-///!                  Mal,SizGooo مƒ„
+                                 [https://discord.gg/Hq7uVfN] **`)
+}).catch(console.error)
+})
 
+client.on("guildMemberRemove", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`**
+      حياك الله ي بعد راسي
+       خش بتنورنا فعاليات وكل شيء حلو موجود !
+        ي بعد عيني الرابط تحت
+         Spring SERVER
 
-  client.on("message", message => {
-  
-              if (message.content.startsWith(send)) {
-                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-    let args = message.content.split(" ").slice(1);
-    var argresult = args.join(' '); 
-    message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-   m.send(`${argresult}\n ${m}`);
-  })
-   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  ط¹ط¯ط¯ ط§ظ„ظ…ط³طھظ„ظ…ظٹظ† `); 
-   message.delete(); 
-  };     
-  });
-
+                                 [https://discord.gg/Hq7uVfN] **`)
+}).catch(console.error)
+})
 client.login(process.env.BOT_TOKEN);
