@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "هني البرفكس"
+const prefix = "G"
 ///!                  Mal,SizGooo ツ
 
 
